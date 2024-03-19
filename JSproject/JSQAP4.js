@@ -61,17 +61,17 @@ const motelCustomer = {
             {
                 console.log("Ckeckin date is later than the check out date")
             }
-        return formattedCheckOut - formattedCheckIn
+        return (formattedCheckOut - formattedCheckIn)/ (1000 * 60 * 60 * 24)   //to get the result in days instead of milliseconds
     }
 }
 
 const customerAge = motelCustomer.getAge();
-
+const durationOfStay = motelCustomer.getDurationOfStay()
 html = `
   <center>
-  <h2>Motel Customer</h2>
+  <h2>Motel Customer Request</h2>
   <p>Hello, my name is ${motelCustomer.customerName}! A ${motelCustomer.genderType} who was born in ${motelCustomer.birthDate.birthYear +"/"+ motelCustomer.birthDate.birthMonth +"/"+ motelCustomer.birthDate.birthday}, which makes me ${customerAge} years old</p>
-  <p>I would like to request a booking in the motel from ${motelCustomer.checkInDate.checkInYear +"/"+ motelCustomer.checkInDate.checkInMonth +"/"+  motelCustomer.checkInDate.checkInDay} to ${motelCustomer.checkOutDate.checkOutYear +"/"+ motelCustomer.checkOutDate.checkOutMonth +"/"+  motelCustomer.checkOutDate.checkOutDay}</p>
+  <p>I would like to request a booking in the motel from ${motelCustomer.checkInDate.checkInYear +"/"+ motelCustomer.checkInDate.checkInMonth +"/"+  motelCustomer.checkInDate.checkInDay} to ${motelCustomer.checkOutDate.checkOutYear +"/"+ motelCustomer.checkOutDate.checkOutMonth +"/"+  motelCustomer.checkOutDate.checkOutDay} for a total of ${durationOfStay} days</p>
   <p>My room preferences are: ${motelCustomer.roomPreference[0]+", "+ motelCustomer.roomPreference[1]+", "+ motelCustomer.roomPreference[2]}</p>
   <p>I will be paying with ${motelCustomer.paymentMethod}</p>
   <p>My contact information below:</p>
