@@ -8,6 +8,8 @@ const motelCustomer = {
         birthday: 8,
     },
 
+    specialRequests: "Halal diet",
+
     genderType: "male",
 
     roomPreference: ["single room", "nice view", "double bed"],
@@ -15,8 +17,8 @@ const motelCustomer = {
     paymentMethod: "Credit Card",
 
     mailingAddress: {
-        street: "10 lonely Drive",
-        city: "st. John's",
+        street: "10 Johny Drive",
+        city: "St. John's",
         province: "NL",
         postalCode: "A1A1A1",
         country: "Canada",
